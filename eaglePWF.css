@@ -1,0 +1,308 @@
+@charset "utf-8";
+
+
+/*========= ローディング画面のためのCSS ===============*/
+#splash {
+	position: fixed;
+	width: 320px;
+	height: 100%;
+	background: rgb(255, 255, 255);
+	z-index: 9999999;
+	text-align:center;
+	color:rgb(0, 0, 0);
+}
+
+#splash-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+.splashbg{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+    display: block;
+    content: "";
+    position:fixed;
+	z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+	left: 0;
+    transform: scaleY(0);
+    background-color: rgb(0, 32, 136);/*伸びる背景色の設定*/
+	animation-name:PageAnime;
+	animation-duration:1.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:bottom;
+		transform:scaleY(0);
+	}
+	50% {
+		transform-origin:bottom;
+		transform:scaleY(1);
+	}
+	50.001% {
+		transform-origin:top;
+	}
+	100% {
+		transform-origin:top;
+		transform:scaleY(0);
+	}
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+
+#container{
+	opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+}
+}
+
+
+h1 header {
+    color: rgb(0, 0, 0);
+}
+
+span {
+    font-size: 30px;
+    color: #00b7ff;
+    -webkit-text-stroke: 1px rgb(0, 132, 255);
+    font-family: sans-serif;
+}
+
+span-1 {
+    font-size: 30px;
+    color: #000000;
+    -webkit-text-stroke: 1px rgb(0, 204, 255);
+    font-family: sans-serif;
+}
+
+@media (max-width: 768px) {
+    .phone_plz {
+        font-size: 0px;
+    }
+}
+
+@media (min-width: 768px) {
+    .phone_plz {
+        font-size: 20px;
+        color: rgb(255, 0, 0);
+    }
+}
+
+
+/*スクロールダウン全体の場所*/
+.scrolldown1{
+    /*描画位置※位置は適宜調整してください*/
+	position:absolute;
+	left:50%;
+    top: 356px;
+    /*全体の高さ*/
+	height:50px;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown1 span{
+    /*描画位置*/
+    position: absolute;
+	left:-15px;
+	top: -15px;
+    /*テキストの形状*/
+	color: rgb(0, 0, 0);
+	font-size: 0.7rem;
+	letter-spacing: 0.05em;
+}
+
+/* 線の描写 */
+.scrolldown1::after{
+	content: "";
+    /*描画位置*/
+    position: absolute;
+	top: 0;
+    /*線の形状*/
+	width: 1px;
+	height: 30px;
+	background: rgb(0, 0, 0);
+    /*線の動き1.4秒かけて動く。永遠にループ*/
+	animation: pathmove 1.4s ease-in-out infinite;
+	opacity:0;
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove{
+	0%{
+		height:0;
+		top:0;
+		opacity: 0;
+	}
+	30%{
+		height:30px;
+		opacity: 1;
+	}
+	100%{
+		height:0;
+		top:50px;
+		opacity: 0;
+	}
+}
+
+
+body {
+    text-align: center;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    width: 320px;
+}
+
+section {
+    height: 100px;
+    left: 10%;
+    right: 10%;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 8px;
+    background: -moz-linear-gradient(65deg, rgb(159, 181, 255), rgb(73, 255, 225)); 
+    background: -webkit-linear-gradient(65deg, rgb(129, 148, 255), rgb(29, 255, 255));
+    background: linear-gradient(25deg, rgb(0, 17, 255), rgb(20, 248, 248));
+}
+
+section p {
+    color: #fff;
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 550;
+}
+
+.contents li {
+    position: relative;
+    list-style: none;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+
+.contents li.show {
+    opacity: 1;
+    transform: none;
+}
+
+.contents li:not(:first-of-type) {
+    margin-bottom: 200px;
+}
+
+.anamationTarget h1 {
+    padding-top: 5px;
+    font-weight: 600;
+    background: rgb(2,0,36);
+    border: left;
+    color: rgb(255, 255, 255);
+    width: 170px;
+    background:repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0),
+    rgba(255, 0, 234, 0) 2px, #fff 0, #fff 3.5px)
+    ,linear-gradient(122deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%,
+    rgba(0,212,255,1) 100%);
+}
+
+.under-color {
+    font-family: fantasy;
+    color: #fff;
+    padding-right: 5px;
+    font-size: 10px;
+    text-align: right;
+    margin-top: -22px;
+    width: 165px;
+    background: rgb(2,0,36);
+    background: linear-gradient(122deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);
+}
+
+.anamationTarget h2 {
+    background-color: #0400A5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%231f55bb' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%232c79ce' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%233694df' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%233eabf0' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%2345BFFF' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-align: left;
+    width: 160px;
+}
+
+.under-color-2 {
+    font-family: fantasy;
+    color: #fff;
+    padding-right: 5px;
+    font-size: 10px;
+    text-align: right;
+    margin-top: -20px;
+    width: 155px;
+    background: rgb(2,0,36);
+    background: linear-gradient(122deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 30%, rgba(0,212,255,1) 100%);
+}
+
+.content2 {
+    width: 250px;
+    background-color: #000263;
+    color: #fff;
+}
+
+.anamationTarget p{
+    padding: 0px;
+    background-color: rgb(108, 189, 255);
+}
+
+footer {
+    padding-top: 100px;
+    text-align: center;
+}
+
+#page-top a{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23021c98' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%230244c9' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%23027afa' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%232fb3fe' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%235FDEFF' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+	color:#fff;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+	padding:20px;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-size: 0.8rem;
+	transition: all 0.3s;
+}
+
+#page-top a:hover{
+	background: rgb(13, 0, 129);
+}
