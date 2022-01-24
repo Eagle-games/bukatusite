@@ -251,6 +251,7 @@ section p {
 
 .under-color {
     font-family: fantasy;
+    font-weight: 800;
     color: #fff;
     padding-right: 5px;
     font-size: 10px;
@@ -274,6 +275,7 @@ section p {
 
 .under-color-2 {
     font-family: fantasy;
+    font-weight: 800;
     color: #fff;
     padding-right: 5px;
     font-size: 10px;
