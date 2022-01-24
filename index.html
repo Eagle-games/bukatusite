@@ -16,6 +16,23 @@
 
     <div id="container">
         <header id="header">
+            <div class="video-area">
+                <video id="video" poster="img/rogomogura.jpg" webkit-playsinline playsinline muted autoplay loop oncontextmenu="return false;">
+                <!--
+                    poster：動画ファイルが利用できない環境で代替表示される画像
+                    webkit-playsinline：iOS 9までのSafari用インライン再生指定
+                    playsinline：iOS 10以降のSafari用インライン再生指定
+                    muted：音声をミュートさせる
+                    autoplay：動画を自動再生させる
+                    loop：動画をループさせる
+                    controls：コントロールバーを表示する
+                -->
+                <source src="video/rogomogura.mp4" type="video/mp4">
+                <source src="video/rogomogura.ogv" type="video/ogv">
+                <source src="video/rogomogura.webm" type="video/webm">
+                <p>動画を再生できる環境ではありません。</p>
+                </video>
+            </div>
             <h1>ようこそ技術工作部
                 <br>(非公式)
                 <br>webサイト支部へ
