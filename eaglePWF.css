@@ -116,6 +116,10 @@ span-1 {
 
 @media (min-width: 768px) {
     .phone_plz {
+	width: 500px;
+        position: absolute;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
         font-size: 20px;
         color: rgb(255, 0, 0);
     }
