@@ -365,8 +365,29 @@ footer {
 .show-animate .back{
     opacity: 1;
     top: 0%;
-
+}
 /*メニュー欄のカスタム*/
+#overflow {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+    position: fixed;
+    z-index: 10;
+    display: none;
+    left: 0%;
+    top: 0%;
+    color: rgb(0, 255, 221);
+}
+#overflow .conf {
+    background: rgb(43, 43, 43);
+    padding: 20px;
+    position: fixed;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%,-50%);
+}
+.btns {
+    text-align: right;
 }
 .menu1{
     z-index: 3;
