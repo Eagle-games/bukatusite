@@ -82,3 +82,9 @@ function valueChange(event) {
             setTimeout(function(){video.style.opacity = '1';},500);
             setTimeout(function(){video.src = "video/rogomogura.mp4";},500);
 }}
+function check(){
+    $("#overflow").show();
+}
+function ok(){
+    $("#overflow").hide();
+}
