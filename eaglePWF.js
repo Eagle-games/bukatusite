@@ -36,3 +36,49 @@ $('#page-top').click(function () {
     }, 500);//ページトップスクロールの速さ。数字が大きいほど遅くなる
     return false;//リンク自体の無効化
 });
+
+let icon = document.querySelector('.icon-wrapper')
+let menu = document.querySelector('.menu-list')
+icon.addEventListener('click',()=>{
+    icon.classList.toggle('show-animate');
+    menu.classList.toggle('show-animate');
+})
+
+
+//derkmodeの動き
+const checkbox = document.getElementById('checkbox');
+
+checkbox.addEventListener('change', valueChange);
+
+const body = document.getElementById('body');
+const mode = document.getElementById('mode');
+const video = document.getElementById('video');
+const font = document.querySelectorAll('.font');
+
+const modeText = [
+    'DerkModeON',
+    'DerkModeOFF'
+];
+mode.textContent = modeText[1];
+function valueChange(event) {
+    if (checkbox.checked) {
+        body.classList.add('derk');
+        mode.classList.remove('off');
+        mode.classList.add('on');
+        font[0].classList.add('wihte-font');
+        font[1].classList.add('wihte-font');
+        mode.textContent = modeText[0];
+            setTimeout(function(){video.style.opacity = '0';},0);
+            setTimeout(function(){video.src = "video/derk-logo-mv.mp4";},500);
+            setTimeout(function(){video.style.opacity = '1';},500);
+    } else {
+        body.classList.remove('derk');
+        mode.classList.remove('on');
+        mode.classList.add('off');
+        font[0].classList.remove('wihte-font');
+        font[1].classList.remove('wihte-font');
+        mode.textContent = modeText[1]
+            setTimeout(function(){video.style.opacity = '0';},0);
+            setTimeout(function(){video.style.opacity = '1';},500);
+            setTimeout(function(){video.src = "video/rogomogura.mp4";},500);
+}}
