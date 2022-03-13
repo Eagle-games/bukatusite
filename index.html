@@ -6,9 +6,8 @@
         <meta name="robots" content="noindex,nofollow">
         <title>技術工作部</title>
         <link rel="stylesheet" href="eaglePWF.css">
-        <script src="eaglePWF.js" defer></script>
     </head>
-<body>
+<body class="body" id="body">
     <div id="splash">
         <div id="splash-logo">読み込み中</div>
         <!--/splash--></div>
@@ -17,7 +16,7 @@
     <div id="container">
         <header id="header">
             <div class="video-area">
-                <video id="video" poster="img/rogomogura.jpg" webkit-playsinline playsinline muted autoplay loop oncontextmenu="return false;">
+                <video class="video" id="video" webkit-playsinline playsinline muted autoplay loop oncontextmenu="return false;">
                 <!--
                     poster：動画ファイルが利用できない環境で代替表示される画像
                     webkit-playsinline：iOS 9までのSafari用インライン再生指定
@@ -30,14 +29,16 @@
                 <source src="video/rogomogura.mp4" type="video/mp4">
                 <source src="video/rogomogura.ogv" type="video/ogv">
                 <source src="video/rogomogura.webm" type="video/webm">
+                <source src="video/derk-logo-mv.mp4" type="video/mp4">
                 <p>動画を再生できる環境ではありません。</p>
                 </video>
             </div>
-            <h1>ようこそ技術工作部
+            <h1 class="font">ようこそ技術工作部
                 <br>(非公式)
                 <br>webサイト支部へ
             </h1>
-            <p class="phone_plz">すまんスマホ以外見ずらいぞ
+            <p class="phone_plz">
+                    スマホ以外だと表記が乱れる可能性があります。
                 <br>対策としてウィンドウを細くしてください。
             </p>
             <section>
@@ -46,6 +47,23 @@
             <div class="scrolldown1"><span>Scroll</span></div>
         </header>
     <main>
+
+        <div class="icon-wrapper">
+            <div class="back"></div>
+            <div class="icon-item line1"></div>
+            <div class="icon-item line2"></div>
+            <div class="icon-item line3"></div>
+        </div>
+        <div class="menu-list">
+            <div class="menu1"><h4>機能一覧</h4></div>
+            <div class="menu2">
+            <label>
+                <input type="checkbox" id="checkbox" class="checkbox">
+                <h4 id="mode" class="mode off">mode</h4>
+            </label>
+            </div>
+        </div>
+
         <ul class="contents">
             <li class="anamationTarget">
                 <div class="constestsText">
@@ -127,15 +145,16 @@
             </li>
         </ul>
     </main>
-        <footer>
+        <footer class="font">
             <h3>別の部活に入ってても
                 <br>入ってなくても
                 <br>誤侵入下さい！！</h3>
-                Established in 2021
-            <br>Produced by 元部鳥
+            <p class="produced">Established in 2021
+            <br>Produced by 元部鳥</p>
             <p id="page-top"><a href="#">Page Top</a></p>	
         </footer>
     </div>
+    <script src="eaglePWF.js" defer></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </body>
 </html>
