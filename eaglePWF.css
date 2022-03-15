@@ -385,6 +385,8 @@ footer {
     color: rgb(0, 195, 255);
 }
 #overflow .conf {
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
     background: rgb(43, 43, 43);
     padding: 20px;
     position: fixed;
