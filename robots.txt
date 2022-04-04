@@ -2,7 +2,7 @@ User-agent: *
 
 Sitemap: https://https://eagle-games.github.io/bukatusite/sitemap.xml
 
-User-agent: *
+User-agent: bingbot
 Crawl-delay: 30
 
 User-agent: MSNBOT
