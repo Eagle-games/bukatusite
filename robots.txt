@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: 
 
 Sitemap: https://https://eagle-games.github.io/bukatusite/sitemap.xml
 
