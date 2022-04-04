@@ -1,7 +1,7 @@
 User-agent: *
 Disallow: 
 
-Sitemap: https://eagle-games.github.io/sitemap.xml
+Sitemap: https://https://eagle-games.github.io/bukatusite/sitemap.xml
 
 User-agent: bingbot
 Crawl-delay: 30
