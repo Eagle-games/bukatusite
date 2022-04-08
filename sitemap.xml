@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for post in posts %}
   <url>
-    <loc>{{ post.permalink | uriencode }}</loc>
+    <loc>{{ post.permalink | https://eagle-games.github.io/bukatusite/ }}</loc>
     {% if post.updated %}
-    <lastmod>{{ post.updated | formatDate }}</lastmod>
+    <lastmod>{{ post.updated | https://eagle-games.github.io/bukatusite/ }}</lastmod>
     {% elif post.date %}
-    <lastmod>{{ post.date | formatDate }}</lastmod>
+    <lastmod>{{ post.date | https://eagle-games.github.io/bukatusite/ }}</lastmod>
     {% endif %}
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
