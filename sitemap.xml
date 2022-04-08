@@ -4,9 +4,9 @@
   <url>
     <loc>{{ post.permalink | https://eagle-games.github.io/bukatusite/ }}</loc>
     {% if post.updated %}
-    <lastmod>{{ post.updated | https://eagle-games.github.io/bukatusite/ }}</lastmod>
+    <lastmod>{{ post.updated | urlencode }}</lastmod>
     {% elif post.date %}
-    <lastmod>{{ post.date | https://eagle-games.github.io/bukatusite/ }}</lastmod>
+    <lastmod>{{ post.date | urlencode }}</lastmod>
     {% endif %}
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -14,7 +14,7 @@
   {% endfor %}
 
   <url>
-    <loc>{{ config.url | uriencode }}</loc>
+    <loc>{{ config.url | https://eagle-games.github.io/bukatusite/ }}</loc>
     <lastmod>{{ sNow | formatDate }}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -22,7 +22,7 @@
 
   {% for tag in tags %}
   <url>
-    <loc>{{ tag.permalink | uriencode }}</loc>
+    <loc>{{ tag.permalink | https://eagle-games.github.io/bukatusite/ }}</loc>
     <lastmod>{{ sNow | formatDate }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
