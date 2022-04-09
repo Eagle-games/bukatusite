@@ -1,5 +1,4 @@
 User-Agent:*
 Disallow:
-Crawl-delay: 30
 
 Sitemap: https://eagle-games.github.io/bukatusite/sitemap.xml
