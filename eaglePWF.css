@@ -181,7 +181,6 @@ span-1 {
 	}
 }
 
-
 body {
     text-align: center;
     margin: auto;
@@ -195,8 +194,6 @@ body {
     position: fixed;
     z-index: -1;
 }
-
-
 
 section {
     height: 100px;
@@ -347,7 +344,7 @@ footer {
 }
 .show-animate .line2{
     opacity: 0;
-    transform: translateX(50%)rotate(45deg);
+    transform: translateX(50%) rotate(45deg);
     background-color: aliceblue;
 }
 .show-animate .line3{
@@ -401,7 +398,7 @@ footer {
 }
 .menu1{
     z-index: 3;
-    top: 120px;
+    margin-top: -180px;
     position: fixed;
     background-color: rgb(0, 255, 221);
     height: 5px;
@@ -412,7 +409,7 @@ footer {
 }
 .menu1 h4{
     position: fixed;
-    top: 80px;
+    margin-top: -20px;
     color: aliceblue;
 }
 .show-animate .menu1{
@@ -422,7 +419,7 @@ footer {
 }
 .menu2{
     z-index: 3;
-    top: 160px;
+    margin-top: -135px;
     position: fixed;
     background-color: rgb(0, 195, 255);
     height: 5px;
@@ -433,7 +430,7 @@ footer {
 }
 .menu2 h4{
     position: fixed;
-    top: 120px;
+    margin-top: -20px;
     color: aliceblue;
 }
 .show-animate .menu2{
